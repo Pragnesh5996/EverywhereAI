@@ -1,0 +1,120 @@
+version: '3'
+services:
+  redis:
+    image: "redis:alpine"
+    restart: always
+    networks:
+      - sf_network
+  web:
+    restart: always
+    build: .
+    image: sfweb
+    # command: gunicorn SF.wsgi:application --bind 0.0.0.0:8001 --workers=5 --timeout=5000 --log-level=error --reload
+    command: python manage.py runserver 0.0.0.0:8001
+    volumes:
+      - .:/code
+    ports:
+      - "8001:8001"
+    depends_on:
+      - redis
+    networks:
+      - sf_network
+
+  celery:
+    image: sfweb
+    restart: always
+    command: celery -A SF worker -n common --loglevel=info
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - redis
+    networks:
+      - sf_network
+
+  email:
+    image: sfweb
+    restart: always
+    command: celery -A SF worker -n email --concurrency=2 -Q email --loglevel=ERROR
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - redis
+    networks:
+      - sf_network
+
+  initializer_worker:
+    image: sfweb
+    restart: always
+    command: celery -A SF worker -n profile_initializer --concurrency=2 -Q profile,initializer --loglevel=ERROR
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - redis
+    networks:
+      - sf_network
+
+  roomleft_worker:
+    image: sfweb
+    restart: always
+    command: celery -A SF worker -n facebook_room_left --concurrency=2 -Q facebook_page_room_tenant,update_facebook_page_room_tenant,fetch_latest_profile_data --loglevel=ERROR
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - redis
+    networks:
+      - sf_network
+
+  refresh_profile_worker:
+    image: sfweb
+    restart: always
+    command: celery -A SF worker -n fetch_latest_profile --concurrency=2 -Q fetch_latest_profile_data --loglevel=ERROR
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - redis
+    networks:
+      - sf_network
+
+  daily_spend_data_worker:
+    image: sfweb
+    restart: always
+    command: celery -A SF worker -n daily_spend_data --concurrency=2 -Q daily_spend_data --loglevel=ERROR
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - redis
+    networks:
+      - sf_network
+
+  celery-beat:
+    restart: always
+    image: sfweb
+    command: celery -A SF beat -l error
+    volumes:
+      - .:/code
+    depends_on:
+      - web
+      - redis
+    networks:
+      - sf_network
+  flower:
+    image: mher/flower:0.9.5
+    restart: always
+    env_file:
+      - SF/.env
+    command: ['flower', '--port=2052']
+    ports:
+      - 2052:2052
+    networks:
+      - sf_network
+
+networks:
+  sf_network:
+    ipam:
+      driver: default

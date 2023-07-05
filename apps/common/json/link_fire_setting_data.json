@@ -1,0 +1,56 @@
+[
+    {
+        "sortorder": "2",
+        "mediaservicename": "amazonmusic",
+        "mediaserviceid": "18976FD2-4365-49B5-86BC-F1E93D8465DB",
+        "heading": "🎧 Listen & Follow 👇"
+    },
+    {
+        "sortorder": "6",
+        "mediaservicename": "discord",
+        "mediaserviceid": "1929f634-898d-44e7-aee4-17b1493d099d",
+        "heading": "🎧 Listen & Follow 👇"
+    },
+    {
+        "sortorder": "7",
+        "mediaservicename": "social-media",
+        "mediaserviceid": "5779e7ed-ea10-45ad-be3d-4d74b4e41cc1",
+        "heading": "🎧 Listen & Follow 👇"
+    },
+    {
+        "sortorder": "11",
+        "mediaservicename": "deezer",
+        "mediaserviceid": "73e67c13-8c84-4e9f-9811-b889588dbab3",
+        "heading": "🎧 Listen & Follow 👇"
+    },
+    {
+        "sortorder": "4",
+        "mediaservicename": "tidal",
+        "mediaserviceid": "79ff73ee-d065-4ce6-b3e7-152f34a676d6",
+        "heading": "🎧 Listen & Follow 👇"
+    },
+    {
+        "sortorder": "0",
+        "mediaservicename": "spotify",
+        "mediaserviceid": "7a586f9f-9e2d-4383-83cc-b2aa5bd1798d",
+        "heading": "🎧 Listen & Follow 👇"
+    },
+    {
+        "sortorder": "1",
+        "mediaservicename": "applemusic",
+        "mediaserviceid": "8f82cc1c-a2c3-4438-8a29-285983518182",
+        "heading": "🎧 Listen & Follow 👇"
+    },
+    {
+        "sortorder": "9",
+        "mediaservicename": "merchandise",
+        "mediaserviceid": "aac3f3dc-f77d-45a9-9c8f-6634d9c073f8",
+        "heading": "🎧 Listen & Follow 👇"
+    },
+    {
+        "sortorder": "8",
+        "mediaservicename": "youtubemusic",
+        "mediaserviceid": "ee22320b-b5f0-42dd-b5ec-64534bf4f1a1",
+        "heading": "🎧 Listen & Follow 👇"
+    }
+]

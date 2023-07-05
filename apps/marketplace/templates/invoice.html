@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <title>my healthy staff</title>
+   </head>
+   <style>
+      body {
+      background: #eee;
+      }
+      .div-row{
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         border-bottom:  1px solid rgba(76, 78, 100, 0.12);
+         padding-bottom: 20px;
+      }
+      h3.address-title ,.address-title-image{
+      font-size: 24px;
+      color: #000082;
+      font-weight: 700;
+      }
+      .address-title-image{
+      padding-left: 10px;
+      }
+      .invoice-header-height{
+      height: auto;
+      }
+      table.table.table-bordered.table-condensed {
+      margin: 0px;
+      }
+      .invoice {
+      width: 970px !important;
+      }
+      .invoice .invoice-header {
+      padding: 25px 25px 15px;
+      }
+      .invoice .invoice-header h1 {
+      margin: 0;
+      }
+      .invoice .invoice-header .media .media-body {
+      font-size: 0.9em;
+      margin: 0;
+      }
+      .invoice .invoice-body {
+      border-radius: 10px;
+      padding: 25px;
+      background: #fff;
+      width: fit-content;
+      }
+      .dl-horizontal {
+      margin: 0;
+      line-height: 1.2;
+      padding: 12px;
+      } 
+      dd{
+         color: rgba(76, 78, 100, 0.68);
+      }
+      .panel-body-image{
+      text-align: center;
+      }
+      .panel-body-image img {
+      width: 200px;
+      height: 100px;
+      }
+      .invoice-heading{
+      font-size: 18px;
+      font-weight: 600;
+      }
+      .invoice-purchase-side dd {
+      display: flex;
+      justify-content: space-between;
+      }
+      .table-data-txt {
+      font-size: 14px;
+      }
+      tbody, td, tfoot, th, thead, tr {
+      border-style: unset;
+      border-bottom:1px solid #dee2e6;
+      }
+      .none-border{
+         border: none;
+      }
+      .panel-body.table-payment-title {
+      margin-top: 50px;
+      }
+      .list-unstyled li a {
+      font-weight: 600;
+      text-decoration: none;
+      color: #000082;
+      }
+      .list-unstyled-one p , .list-unstyled-two {
+      list-style-type: none;
+      margin: 0px;
+      }
+      .list-unstyled-one a{
+      font-size:18px;
+      text-decoration: none;
+      }
+      .list-unstyled-two a {
+      font-size: 18px;
+      color: #000;
+      }
+      .panel-title{
+         color: rgba(76, 78, 100, 0.68)
+      }
+      p.panel-title-footer-end {
+      text-align: end;
+      }
+      p.panel-titlefooter-start ,p.panel-title-footer-end {
+      padding-top: 10px;
+      }
+      .panel-default-btn{
+      float: right;
+      }
+      a.invoice-print-btn {
+      padding: 8px 20px;
+      border:1px solid #dee2e6;
+      border-radius: 6px;
+      text-transform: uppercase;
+      background: #fff;
+      color: #000;
+      text-decoration: none;
+      }
+      a.invoice-download-btn {
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 6px;
+      background: #000082;
+      color: #fff;
+      text-decoration: none;
+      }
+      .invoice-header-total {
+      margin-bottom: 20px;
+      border-bottom: 1px solid #dee2e6;
+      }
+   </style>
+   <body>
+      <div class="invoice">
+      <div class="invoice-body">
+         <div class="div-row">
+            <div>
+               <div class="panel panel-default">
+                  <div class="panel-heading">
+                     <h3 class="address-title">EverywhereAI</h3>
+                  </div>
+                  <div class="panel-body">
+                     <dl class="dl-horizontal">
+                     <dd>Office 149, 450 South Brand Brooklyn</dd>
+                     <dd>San Diego County, CA 91905, USA</dd>
+                     <dd>+1 (123) 456 7891, +44 (876) 543 2198</dd>
+                  </div>
+               </div>
+            </div>
+            <div>
+               <div class="panel panel-default ">
+                  <div class="panel-heading">
+                     <h3 class="address-title-image">Invoice</h3>
+                  </div>
+                  <div class="panel-body">
+                     <dl class="dl-horizontal">
+                     <dd>Date Issued: 22/03/2023</dd>
+                     <dd>Date Due: 25/08/2022</dd>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="div-row" style="margin-top: 20px;">
+            <div>
+               <div class="panel panel-default address-border">
+                  <div class="panel-body">
+                     <dl class="dl-horizontal">
+                     <dd class="invoice-heading">Invoice To:</dd>
+                     <dd>Thomas shelby</dd>
+                     <dd>Shelby Company Limited</dd>
+                     <dd>Small Heath, B10 0HF, UK</dd>
+                     <dd>718-986-6062</dd>
+                     <dd>peakyfblinders@gmail.com</dd>
+                  </div>
+               </div>
+            </div>
+            <div style="width: 33%;">
+               <div class="panel panel-default address-border">
+                  <div class="panel-body">
+                     <dl class="dl-horizontal invoice-purchase-side">
+                     <dd class="invoice-heading">Bill To:</dd>
+                     <table class="none-border" style="width: 100%;">
+                        <tbody class="none-border">
+                           <tr class="none-border">
+                              <td class="none-border"><dd>Total Due</dd></td>
+                              <td class="none-border"><dd>$12,110.55</dd></td>
+                           </tr>
+                           <tr class="none-border">
+                              <td class="none-border"><dd>Bank name</dd></td>
+                              <td class="none-border"><dd>American Bank</dd></td>
+                           </tr>
+                           <tr class="none-border">
+                              <td class="none-border"><dd>Country</dd></td>
+                              <td class="none-border"><dd>United States</dd></td>
+                           </tr>
+                           <tr class="none-border">
+                              <td class="none-border"><dd>IBAN</dd></td>
+                              <td class="none-border"><dd>ETD95476213874685</dd></td>
+                           </tr>
+                           <tr class="none-border">
+                              <td class="none-border"><dd>SWIFT code</dd></td>
+                              <td class="none-border"><dd>BR91905</dd></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="panel panel-default invoice-header-height">
+            <table class="table table-bordered table-condensed">
+               <thead>
+                  <tr class="header-tr-border">
+                     <th>JOB</th>
+                     <th>BRAND</th>
+                     <th>TYPE</th>
+                     <th>DESCRIPTION</th>
+                     <th>EARNED</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {% for recoard in recoards %}
+                  <tr>
+                     <td class="table-data-txt">
+                        <dd>
+                        {{recoard.job__title}}
+                        </dd>
+                     </td>
+                     <td class="table-data-txt">
+                        <dd>
+                        {{recoard.job__brand__brand_name}}
+                        </dd>
+                     </td>
+                     <td class="table-data-txt">
+                        <dd>
+                        {{recoard.job__publish_content_type}}
+                        </dd>
+                     </td>
+                     <td class="table-data-txt">
+                        <dd>
+                       {% if recoard.job__publish_content_type == "collect_video_and_post" %}
+                       View milestone {{recoard.milestone__milestone_number}} out of 4
+                       {% else %}
+                       View submission
+                       {% endif %}
+                     </dd>
+                     </td>
+                     <td class="table-data-txt">
+                        <dd>
+                        {{recoard.amount}}
+                        </dd>
+                     </td>
+                  </tr>
+                  {% endfor %}
+                  <tr>
+                     <td class="table-data-txt">
+                     </td>
+                     <td class="table-data-txt">
+                     </td>
+                     <td class="table-data-txt">
+                     </td>
+                     <td class="table-data-txt">
+                        SubTotal
+                     </td>
+                     <td class="table-data-txt">
+                        {{total_amount}}
+                     </td>
+                  </tr>
+                  <tr class="invoice-header-total">
+                     <td class="table-data-txt">
+                     </td>
+                     <td class="table-data-txt">
+                     </td>
+                     <td class="table-data-txt">
+                     </td>
+                     <td class="table-data-txt">
+                        Total
+                     </td>
+                     <td class="table-data-txt">
+                        {{total_amount}}
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="div-row">
+            <div>
+               <div class="panel panel-default">
+                  <div class="panel-body table-payment-title">
+                     <p class="panel-title">The EverywhereAI team would like to thank you for your effort and participation in Creator Marketplace jobs. Bringing content creators and brands closer to create meaningful content together.
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js"></script>
+   </body>
+</html>
